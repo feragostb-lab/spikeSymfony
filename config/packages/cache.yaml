@@ -1,0 +1,25 @@
+framework:
+    cache:
+        # Put the unique name of your app here: the prefix seed
+        # is used to compute stable namespaces for cache keys.
+        #prefix_seed: your_vendor_name/app_name
+
+        # The "app" cache stores to the filesystem by default.
+        # The data in this cache should persist between deploys.
+        # Other options include: "cache.adapter.filesystem", "cache.adapter.redis", "cache.adapter.memcached" etc.
+        app: cache.adapter.filesystem
+
+        # The "system" cache is used internally by Symfony.
+        system: cache.adapter.system
+
+        # Other pools can be configured to suit your needs
+        # pools:
+        #     my.custom.cache:
+        #         adapter: cache.app
+
+when@prod:
+    framework:
+        cache:
+            # Use Redis or Memcached in production for better performance
+            # app: cache.adapter.redis
+            # default_redis_provider: redis://localhost

@@ -1,0 +1,53 @@
+api_platform:
+    title: Symfony PWA API
+    version: 1.0.0
+    description: RESTful API with OpenAPI documentation
+    
+    # The API Platform OpenAPI feature is enabled by default
+    # Swagger UI is available at /api/docs
+    swagger:
+        versions: [3]
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
+    
+    # Enable the GraphQL support (optional)
+    # graphql:
+    #     enabled: true
+    
+    # Formats available for the API
+    formats:
+        jsonld: ['application/ld+json']
+        json: ['application/json']
+        html: ['text/html']
+    
+    # Enable PATCH method
+    patch_formats:
+        json: ['application/merge-patch+json']
+    
+    # Doctrine integration
+    doctrine:
+        enabled: true
+    
+    # Enable the built-in HTTP cache invalidation
+    http_cache:
+        invalidation:
+            enabled: true
+            varnish_urls: ['%env(VARNISH_URL)%']
+        max_age: 0
+        shared_max_age: 3600
+        vary: ['Content-Type', 'Authorization', 'Origin']
+        public: true
+    
+    # Collection pagination
+    collection:
+        pagination:
+            enabled: true
+            client_enabled: true
+            client_items_per_page: true
+            items_per_page: 30
+            maximum_items_per_page: 100
+            page_parameter_name: page
+            enabled_parameter_name: pagination
+            items_per_page_parameter_name: itemsPerPage

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2>Welcome to Symfony PWA Bootstrap</h2>
+    <p>This is a modern Progressive Web Application (PWA) built with Symfony 7.3 and API Platform.</p>
+    
+    <div class="features">
+        <div class="feature-card">
+            <h3>🚀 RESTful API</h3>
+            <p>Complete REST API with OpenAPI documentation powered by API Platform.</p>
+            <a href="/api" class="btn">View API</a>
+        </div>
+        
+        <div class="feature-card">
+            <h3>📱 PWA Ready</h3>
+            <p>Progressive Web App with service worker for offline capabilities and app-like experience.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>📚 OpenAPI Documentation</h3>
+            <p>Interactive API documentation with Swagger UI for easy API exploration.</p>
+            <a href="/api/docs" class="btn">API Docs</a>
+        </div>
+        
+        <div class="feature-card">
+            <h3>🧪 TDD Ready</h3>
+            <p>Configured with PHPUnit, PHPStan, and PHP-CS-Fixer for test-driven development.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>🔒 Security</h3>
+            <p>Built-in security features with Symfony Security component and CORS support.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>💾 Database Ready</h3>
+            <p>Doctrine ORM configured with migrations support for easy database management.</p>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 40px;">Getting Started</h3>
+    <ol>
+        <li>Install dependencies: <code>composer install</code></li>
+        <li>Configure your database in <code>.env</code></li>
+        <li>Create the database: <code>php bin/console doctrine:database:create</code></li>
+        <li>Run migrations: <code>php bin/console doctrine:migrations:migrate</code></li>
+        <li>Start the server: <code>symfony server:start</code> or <code>php -S localhost:8000 -t public</code></li>
+    </ol>
+</div>
+{% endblock %}
