@@ -34,20 +34,12 @@ api_platform:
     http_cache:
         invalidation:
             enabled: true
-            varnish_urls: ['%env(VARNISH_URL)%']
-        max_age: 0
-        shared_max_age: 3600
-        vary: ['Content-Type', 'Authorization', 'Origin']
         public: true
     
     # Collection pagination
-    collection:
-        pagination:
-            enabled: true
-            client_enabled: true
-            client_items_per_page: true
-            items_per_page: 30
-            maximum_items_per_page: 100
-            page_parameter_name: page
-            enabled_parameter_name: pagination
-            items_per_page_parameter_name: itemsPerPage
+    defaults:
+        pagination_enabled: true
+        pagination_client_enabled: true
+        pagination_client_items_per_page: true
+        pagination_items_per_page: 30
+        pagination_maximum_items_per_page: 100

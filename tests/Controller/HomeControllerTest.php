@@ -22,7 +22,14 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('.feature-card');
-        $this->assertSelectorTextContains('h3', 'RESTful API');
-        $this->assertSelectorTextContains('h3', 'PWA Ready');
+        
+        // Check that multiple feature cards exist
+        $this->assertGreaterThanOrEqual(6, $crawler->filter('.feature-card')->count());
+        
+        // Check for specific features
+        $html = $crawler->html();
+        $this->assertStringContainsString('RESTful API', $html);
+        $this->assertStringContainsString('PWA Ready', $html);
+        $this->assertStringContainsString('OpenAPI Documentation', $html);
     }
 }
